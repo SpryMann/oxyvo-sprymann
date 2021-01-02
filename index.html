@@ -393,8 +393,8 @@
     const burgerMenu = document.querySelector('.menu-burger');
     const categories = document.querySelector('.categories');
 
-    if (window.screen.width <= 545) {
-      burgerMenu.addEventListener('click', () => {
+    burgerMenu.addEventListener('click', () => {
+      if (window.screen.width <= 545) {
         categories.classList.toggle('active');
         document.body.classList.toggle('no-scroll');
 
@@ -403,8 +403,8 @@
         } else {
           burgerMenu.querySelector('i').className = 'fas fa-bars';
         }
-      });
-    }
+      }
+    });
   </script>
 </body>
 
