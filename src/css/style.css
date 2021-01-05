@@ -64,8 +64,6 @@ li {
 }
 
 body {
-  min-height: 100vh;
-
   font-family: "Montserrat", sans-serif;
   font-size: 10px;
 }
@@ -77,6 +75,15 @@ body {
 
 .no-scroll {
   overflow-y: hidden;
+}
+
+.hide {
+  display: none;
+  height: 0;
+
+  overflow: hidden;
+
+  transition: .3s linear;
 }
 
 .header {
@@ -141,6 +148,10 @@ body {
   width: 50%;
 }
 
+main {
+  min-height: calc(100vh - 17rem);
+}
+
 .categories {
   display: flex;
   justify-content: center;
@@ -178,6 +189,8 @@ body {
   position: relative;
 
   box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+
+  transition: .3s linear;
 }
 
 .description {
@@ -427,6 +440,35 @@ body {
   color: #FEFEFE;
 }
 
+/* Search page styles */
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.search-form__input {
+  border-width: 1px;
+  border-radius: .2rem;
+  margin-right: 1rem;
+  padding: .5rem 1rem;
+  width: 30rem;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #383839;
+}
+
+.btn.search-form__submit {
+  margin-top: 0;
+
+  color: #FEFEFE;
+
+  background: linear-gradient(to top right, #888082, #383838);
+}
+
 @media screen and (min-width: 2560px) {
   .fa-chevron-left.slick-arrow {
     left: 17%;
@@ -523,6 +565,10 @@ body {
   .slick-arrow {
     font-size: 1rem;
   }
+
+  .row {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media screen and (max-width: 992px) {
@@ -574,6 +620,11 @@ body {
     padding: .3rem .7rem;
     font-size: 0.8rem;
   }
+
+  .btn.search-form__submit {
+    padding: .5rem 1rem;
+    font-size: 0.9rem;
+  }
 }
 
 @media screen and (max-width: 641px) {
@@ -613,6 +664,10 @@ body {
   .footer p {
     font-size: 0.6rem;
   }
+
+  .search-form__input {
+    width: 21rem;
+  }
 }
 
 @media screen and (max-width: 575px) {
@@ -638,6 +693,10 @@ body {
 }
 
 @media screen and (max-width: 545px) {
+  main {
+    min-height: calc(100vh - 15rem);
+  }
+
   .description--big {
     justify-content: center;
     padding-bottom: 0;
@@ -714,11 +773,26 @@ body {
   .description__text {
     max-width: 11rem;
   }
+
+  .first-row,
+  .second-row {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 12rem;
+  }
+
+  .search-form__input {
+    width: 15rem;
+  }
 }
 
 @media screen and (max-width: 375px) {
   .description--big .description__text,
   .description__text {
     max-width: 8rem;
+  }
+
+  .search-form__input {
+    width: 10rem;
+    margin-right: 0.5rem;
   }
 }
